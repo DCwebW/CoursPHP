@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Padawan</title>
+</head>
+<style>
+    body {
+        background-image: url("fond d'écran étoilé.jpg");
+    }
+.elem{
+    font-weight: bold;
+    color : yellow;
+    background-color: black;
+    text-align: center;
+    width : 400px;
+    height: 100px;
+    margin: 0px auto;
+    border-radius: 16px;
+}
+#bouton{
+    width : 200px;
+    height: 100px;
+    margin: 0px auto;
+}
+
+h1{
+    font-style: color= yellow;
+    background-color: black;
+    text-align: center;
+}
+</style>
+<body>
+    <h1 style="color: yellow">Bienvenue que la force soit avec toi!!!!</h1>
+    <form action="" method="post">
+<div class="elem">
+    <p>
+        <label for="id">Identifiant</label>
+        <p><input type="text" name="id" placeholder="Votre identifiant"></p>
+    </p>
+</div>
+<div class="elem">
+<p>
+    <label for="name">Nom</label>
+</p>
+<p>
+    <input type="text" name="name" id="" placeholder="Votre nom ici">
+</p>
+</div>
+<div class="elem">
+<p>
+    <label for="age">Age</label>
+</p>
+<p>
+    <input type="number" name="age" id="" placeholder="Votre age" min= 0 max= 99 required>
+</p>
+</div>
+<div class="elem">
+<p>
+    <label for="password">Mot de passe</label>
+</p>
+    
+<p>
+        <input type="password" name="password" id="" placeholder="Votre mot de passe">
+ </p>
+</div>
+<div id="bouton">
+<p style="padding-left: 30%;">
+    <input type="submit" value="Envoyer"  >
+</p>
+</div>
+</form>   
+</body>
+</html>

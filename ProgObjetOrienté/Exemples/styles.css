@@ -1,0 +1,28 @@
+nav ul{
+    list-style-type: none;
+    background-color: rgb(223, 226, 43);
+    margin: 0px;
+    padding: 0px;
+    overflow:hidden;
+}
+
+nav ul li {
+    float: left;
+    padding: 20px;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    color: red
+}
+h1{
+
+clear:left
+}
+footer p{
+    font-size: 1.5em;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif
+}
