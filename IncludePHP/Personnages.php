@@ -21,6 +21,7 @@ $p3 = ["Mohammed",56,true,28];
 </form>
 <h2>G2R FORMATION</h2>
 <?php
+var_dump($_POST);
 if(!isset($_POST['personnage'])|| $_POST['personnage']==="p1"){
     echo'<table><tr><td>';
     echo '<img src="images\2.PNG">';
