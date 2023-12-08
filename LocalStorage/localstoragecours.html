@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body onload="afficher()">
+    <h1> Liste de Courses</h1>
+    <form action="" method="post">
+        <p>
+            <label for="produit"> Produit :</label>
+            <br>
+            <input type="text" placeholder="produit" id="produit">
+        </p>
+        <p>
+            <label for = "quantité"> Quantité :</label>
+            <br>
+            <input type="number" placeholder="Quantité" id="qté">
+        </p>
+        <label for="prix"> Prix :</label>
+        <br>
+        <input type="number" placeholder="Prix" id="prix">
+        <p>
+            <input type="button" value="Ajouter" onclick="ajouter()">
+        </p>
+        <br>
+        <p>
+        <input type="button" value="Modifier" onclick="modifier()">
+        </p>
+        <p>
+        <input type="button" value="Supprimer" onclick="supprimer()">
+        </p>
+    </form>
+    <table id="display" style="border: 3px solid blue; ">
+
+    </table>
+    <script src="scriptlocalstorage.js"></script>
+    
+</body>
+</html>
