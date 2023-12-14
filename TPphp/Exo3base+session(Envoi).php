@@ -2,7 +2,7 @@
 
 $connect = mysqli_connect("localhost","root","","adresseslivraison");
 
-if(isset($_POST)){
+if(isset($_POST['envoyer'])){
     $nom = $_POST['nom'];
     $prenom= $_POST['prenom'];
     $adresse= $_POST['adresse'];

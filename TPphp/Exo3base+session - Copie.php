@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <?php
+if (isset($_POST['modifier'])){
+$nom = $_POST['nomc'];
 
+var_dump($nom);
+    
 
-
+}
 
 
  ?>
@@ -16,12 +21,12 @@
     <h1>Adresse de livraison</h1>
 
 
-    <form action="" method="post">
+    <form action="Exo3base+session(suite) - Copie.php" method="post">
     <fieldset>
         <legend>Livraison : </legend>
 
 <label for="nom">Nom :</label>
-<input type="text" name="nom" id="nom" required >
+<input type="text" name="nom" id="nom"  required >
 <label for="prenom">Prénom :</label>
 <input type="text" name="prenom" id="prenom" required>
 <label for="adresse">Adresse :</label>
@@ -29,7 +34,7 @@
 <label for="cp">Code postal :</label>
 <input type="number" name="cp" id="cp" required>
     </fieldset>
-    <input type="button" value="Suivi de votre commande" onclick="ajouter()">
+    <input type="submit" value="Suivi de votre commande" onclick="ajouter()">
  </form>
 <script>
 
@@ -44,6 +49,6 @@
     }
 </script>
 
-   
+
 </body>
 </html>

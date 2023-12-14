@@ -36,5 +36,5 @@ function afficher() {
         let data = JSON.parse(localStorage.getItem(key));
         paires += "<tr><td>" + key + "</td><td>" + data.qté + "</td><td>" + data.prix + "</td></tr>";
     }
-    document.getElementById("display").innerHTML = paires;
+    document.getElementById("display").innerHTML += paires;
 }

@@ -6,35 +6,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
+</head> 
+
 <body>
+  
 <h1>Confirmer l'adresse de livraison</h1>
 
 
-<form action="Exo3base+session(Envoi).php" method="post">
+<form id="monform" action="" method="post">
 <fieldset><legend>Confirmer : </legend>
 
 <label for="nom">Nom :</label>
-<input type="text" name="nom" id="" value="<?php echo  $infosclient['nom'];?>" readonly>
+<input type="text" name="nom" id="nom" value="" readonly>
 <label for="prenom">Prénom :</label>
-<input type="text" name="prenom" id="" value="<?php echo $infosclient['prenom']?>" readonly>
+<input type="text" name="prenom" id="prenom" value="" readonly>
 <label for="">Adresse :</label>
-<input type="text" name="adresse" id="" value="<?php echo $infosclient['adresse'];?>" readonly>
+<input type="text" name="adresse" id="adresse" value="" readonly>
 <label for="cp">Code postal :</label>
-<input type="number" name="cp" id="" value="<?php echo $infosclient['codepostal']?>" readonly>
+<input type="number" name="cp" id="cp" value="" readonly>
 </fieldset>
-<input type="submit" value="Envoyer">
+<input type="submit" value="Recommencer" name="recommencer" onclick= 'effacer()'>
+<input type="submit" value="Modifier" name="modifier" >
+<input type="submit" value="Envoyer" name="envoyer">
 
+       
 </form>
-<form action="Exo3base+session.php" method="get">
-        <!-- Bouton pour modifier -->
-        <input type="hidden" name="modifier" value="1">
-        <input type="submit" value="Modifier">
-    </form
 <?php
 
+if(isset($_POST['recommencer'])){
+  header("Location:Exo3base+session - Copie.php");
+  exit();
+}
+elseif(isset($_POST['modifier'])){
+header("Location:Exo3base+session2 - Copie.html");
+}
+elseif(isset($_POST['envoyer'])){
+  header("Location:Exo3base+session(Envoi).php");
+}
 
-            
 ?>
+ <script>
+   
+     var données = localStorage.getItem("InfosAdresses")
+
+     var donnéestraduites= JSON.parse(données)
+
+     document.getElementById("nom").value = donnéestraduites.nom
+     document.getElementById("prenom").value = donnéestraduites.prenom
+     document.getElementById("adresse").value = donnéestraduites.adresse
+     document.getElementById("cp").value = donnéestraduites.codepostal
+
+
+ function effacer(){
+
+  
+
+  localStorage.clear();
+ }
+            
+</script>
 </body>
 </html>
