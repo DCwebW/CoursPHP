@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adresse de Livraison</title>
+</head>
+<body>
+    <h1>Adresse de livraison</h1>
+    <form action="" method="post">
+
+        <fieldset>
+            <legend>Livraison</legend>
+            <label for="nom">Nom:</label>
+            
+            <input type="text" name="f1" id="f1" required>
+
+            <label for="prenom">Prenom</label>
+            <input type="text" name="f2" id="f2" required>
+
+            <label for="adresse">Adresse</label>
+            <input type="text" name="f2" id="f3"required>
+
+            <label for="codepostal">Code Postal</label>
+            <input type="number" name="f2" id="f4" required>
+        </fieldset>
+    </form>
+    <p><a href="Exo3pageConfirmation(Correction).html" onclick="formCommande()">Suivi de la commande</a></p>
+
+    <script>
+
+        function formCommande(){
+            let f1 = document.getElementById("f1").value;
+            sessionStorage.setItem("nom",f1);
+            let f2 = document.getElementById("f2").value;
+            sessionStorage.setItem("prenom",f2);
+            let f3 = document.getElementById("f3").value;
+            sessionStorage.setItem("adresse",f3);
+            let f4 = document.getElementById("f4").value;
+            sessionStorage.setItem("codepostal",f4);
+        }
+    </script>
+</body>
+</html>

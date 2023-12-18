@@ -19,7 +19,7 @@ class house{
 function getYear(){return $this->year;}
 function getRoomnumber(){return $this->roomnumber;}
 function getSurface(){return $this->surface;}
-function getid(){return $this->id;}//Pas necessaire mais rajoute des controles sur les accès aux propriétés privées de la classe 
+function getid(){return $this->id;}// necessaire, rajoute des controles sur les accès aux propriétés privées de la classe 
 
 function setYear($year){$this->year=$year;}
 function setRoomnumber($roomnumber){$this->roomnumber=$roomnumber;}

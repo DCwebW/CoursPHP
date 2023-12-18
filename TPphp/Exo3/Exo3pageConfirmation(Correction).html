@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Confirmation de l'adresse</title>
+</head>
+<body onload="commande()"> 
+    <!-- le onload permet d'effectuer une action dès la chargement de la page    -->
+    <h1>Confirmation de l'adresse de livraison</h1>
+    <form action="" method="post">
+
+        <fieldset>
+            <legend>Livraison</legend>
+            <label for="nom">Nom:</label>
+            
+            <input type="text" name="f1" id="s1" required>
+
+            <label for="prenom">Prenom</label>
+            <input type="text" name="f2" id="s2" required>
+
+            <label for="adresse">Adresse</label>
+            <input type="text" name="f2" id="s3"required>
+
+            <label for="codepostal">Code Postal</label>
+            <input type="number" name="f2" id="s4" required>
+        </fieldset>
+
+  
+    </form>  
+    <p><a href="Exo3page1(Correction).html"><button>Recommencer</button></a>
+    <button onclick = "modifier()">Modifier</button>
+    <button id="sub">Envoyer</button>
+    </p>
+    <script>
+        function commande(){
+            document.querySelector("#s1").value = sessionStorage.getItem('nom')
+            document.querySelector("#s2").value = sessionStorage.getItem('prenom')
+            document.querySelector("#s3").value = sessionStorage.getItem('adresse')
+            document.querySelector("#s4").value = sessionStorage.getItem('codepostal')
+        }
+
+        function modifier(){
+            let s1 = document.getElementById("s1").value;
+            sessionStorage.setItem("nom",s1);
+            let s2 = document.getElementById("s2").value;
+            sessionStorage.setItem("prenom",s2);
+            let s3 = document.getElementById("s3").value;
+            sessionStorage.setItem("adresse",s3);
+            let s4 = document.getElementById("s4").value;
+            sessionStorage.setItem("codepostal",s4);
+
+        }
+        $(document).ready(function(){
+            $("#sub").click(function(){
+                let nom = $("#s1").val();
+                console.log(nom);
+                let prenom = $("#s2").val();
+                console.log(prenom);
+                let adresse = $("#s3").val();
+                console.log(adresse);
+                let cp = $("#s4").val();
+                console.log(cp);
+                $.ajax({
+                    url:"Exo3pageEnvoi(Correction).php",
+                    data:{nom:nom,prenom:prenom,adresse:adresse,cp:cp},
+                    type:'POST',
+                    success:function(data){
+                        $("#result").html(data);
+                    }
+                })
+            });
+        }) //Cette ligne de code en Jquery permet de 
+    </script>
+    <div id="result"></div>
+</body>
+</html>
