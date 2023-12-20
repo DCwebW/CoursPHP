@@ -1,13 +1,19 @@
 <?php
-
+require_once("Modèles\MainManager.model.php");
 class MainController{
+    private $mainManager;
     private function genererPage($data){
+        
+        
         extract($data);
         ob_start();
         require_once($view);
         $page_content = ob_get_clean();
         require_once($template);
     }
+    public function __construct(){
+            $this ->mainManager=new MainManager();
+        }
     public function accueil(){
         $data_page = [
 
@@ -26,10 +32,17 @@ class MainController{
         // require_once("Vues/DossierCommun/template.php");
     }
     public function page1(){
+        $datas = $this ->mainManager->getDatas();
+        $_SESSION['alert']=[
+            'type'=> 'alert-success',
+            'message'=> "Exemple d'alerte"];
       $data_page=[  "page_title" => "Titre de la page 1",
             "page_description" => "Description de la page 1",
             "view" => "./Vues/page1.view.php",
-            "template" => "Vues/DossierCommun/template.php"];
+            "template" => "Vues/DossierCommun/template.php",
+            "datas" =>$datas
+        
+        ];
             $this ->genererPage(($data_page));
 
     //     $page_title = "Titre de la page 1";
@@ -41,6 +54,9 @@ class MainController{
     // require_once("Vues/DossierCommun/template.php");
     }
     public function page2(){
+        $_SESSION['alert']=[
+            'type'=> 'alert-primary',
+            'message'=> "Exemple d'alerte"];
         $data_page=[  "page_title" => "Titre de la page 2",
         "page_description" => "Description de la page 2",
         "view" => "./Vues/page2.view.php",

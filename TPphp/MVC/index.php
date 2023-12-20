@@ -1,4 +1,6 @@
 <?php
+session_start();
+define("URL",str_replace("index.php","",(isset($_SERVER['https'])?"https":"http")."://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']));
 require_once("./Controleurs/ControleurPrincipal.controller.php");
 $mc = new MainController;
 try{
