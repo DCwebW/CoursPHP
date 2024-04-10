@@ -18,7 +18,7 @@ if(isset($_POST['save'])){
     $imageFileType= strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     $extension_array= array("jpg","jpeg","png","gif");
     if(in_array($imageFileType,$extension_array)){
-        $connect ->query("INSERT INTO crud (name,city,photo) VALUES ('$name','$location','".$photo."')")
+        $connect ->query("INSERT INTO crud (name,city,photo) VALUES ('$name','$location','$photo')")
         or die($connect->error);
         move_uploaded_file($_FILES['file']['tmp_name'],'upload/'.$photo);
         echo "success";

@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    require_once 'crud.php' 
+    require_once 'crud.php';
     // 
     ?>
 

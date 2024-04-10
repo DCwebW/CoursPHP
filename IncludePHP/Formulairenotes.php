@@ -32,6 +32,16 @@ if(isset($_GET["nb"])){
      
 }
 
+function calculerMoyenne($notes) {
+    if (empty($notes)) {
+        return 0;
+    }
+    $somme = array_sum($notes);
+    return $somme / count($notes);
+}
+// fonction pour le test
+
+
 ?>
 
 

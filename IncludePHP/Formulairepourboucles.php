@@ -12,7 +12,7 @@ include("inc/menu.php");
 
 ?>
 <form action="Formulairepourboucles.php"method="get">
-<h1>Formulaire pour boucles et pyramides</h1>
+<h1 class='Formboucles'>Formulaire pour boucles et pyramides</h1>
    <label for="hauteur" >Hauteur :</label>
    <input type="number" name="hauteur" min="2" max="30"required>
    <input type="submit" name="" value="Afficher">

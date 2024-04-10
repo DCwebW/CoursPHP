@@ -12,7 +12,7 @@ include("inc/menu.php");
 ?>
 
     <form action="exemple2.php" method="get">
-<h1>Table de multiplication</h1>
+<h1 class="titre">Table de multiplication</h1>
 
     <input type="number" name="valeur" min="1" required>
     <input type="submit" name="envoi"></input>
